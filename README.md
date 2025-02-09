@@ -1,52 +1,35 @@
-# Telegram-bot-for-instant-price-of-coins-gold-and-dollars
-ربات قیمت دلار، سکه و طلا در بات تلگرام
-این پروژه یک بات تلگرام ساده است که با دریافت اطلاعات از یک API قیمت‌های به‌روز طلا و سکه‌های مرتبط (مانند طلا 18 عیار، مثقال 17 عیار، سکه کامل/نیمه/ربع) را ارسال می‌کند. این ربات با زبان پایتون نوشته شده و از کتابخانه‌های requests و pyTelegramBotAPI استفاده می‌کند.
+# Telegram Price Bot | ربات قیمت طلا و سکه در تلگرام
 
-ویژگی‌ها:
-دریافت قیمت به‌روز: دریافت قیمت‌های جدید انواع طلا (مانند Gold Gram 18K، Mithqal 17K، سکه کامل، نیمه و ربع).
-رابط کاربری با کیبورد سفارشی: ارائه دکمه‌های پیش‌فرض برای انتخاب هر نوع قیمت.
-راه‌اندازی آسان: کافیست توکن ربات تلگرام خود را جایگزین کنید و اسکریپت را اجرا نمایید.
-نصب
-کلون کردن مخزن:
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/telegram-price-bot.git
-cd telegram-price-bot
-نصب پکیج‌های مورد نیاز:
-bash
-Copy
-Edit
-pip install requests
-pip install pyTelegramBotAPI
-ایجاد ربات تلگرام:
-با استفاده از BotFather در تلگرام یک ربات جدید بسازید و توکن API آن را دریافت کنید.
-تنظیمات:
-فایل bot.py را باز کنید.
-مقدار 'YOUR_API_TOKEN_HERE' را با توکن واقعی ربات خود جایگزین کنید.
-اجرای ربات:
-bash
-Copy
-Edit
-python bot.py
-در تلگرام با ربات خود چت را آغاز کرده و دستور /start را ارسال کنید.
-نحوه کارکرد
-ربات با ارسال یک درخواست HTTP GET به آدرس https://price.tlyn.ir/api/v1/price، قیمت‌های به‌روز را دریافت می‌کند.
-دکمه‌های از پیش تعریف شده (مانند "Gold Gram 18K"، "Mithqal 17K"، و ...) برای انتخاب توسط کاربر نمایش داده می‌شود.
-زمانی که کاربر یکی از دکمه‌ها را انتخاب می‌کند، ربات قیمت مربوطه را پیدا کرده، آن را به تومان (ضرب در 1000) تبدیل می‌کند و نتیجه را به کاربر ارسال می‌کند.
-مجوز
-این پروژه به صورت متن‌باز تحت مجوز MIT منتشر شده است.
+This bot retrieves and sends real-time gold and coin prices from an API using Telegram.
 
-yaml
-Copy
-Edit
+این ربات قیمت لحظه‌ای طلا و سکه را از یک API دریافت کرده و در تلگرام ارسال می‌کند.
 
 ---
 
-You can save the above content as `README.md` in your repository. Adjust the repository URL and any specific details (like the list of buttons or API endpoint) as necessary.
+## How It Works | نحوه کارکرد
 
+- The bot fetches the latest prices from `https://price.tlyn.ir/api/v1/price`.
+- It displays buttons for different price categories (Gold Gram 18K, Mithqal 17K, Full Coin, etc.).
+- When a button is pressed, the bot retrieves the relevant price, converts it to Toman (×1000), and sends it to the user.
 
+- ربات قیمت‌های لحظه‌ای را از `https://price.tlyn.ir/api/v1/price` دریافت می‌کند.
+- دکمه‌هایی برای دسته‌بندی‌های مختلف قیمت (طلا 18 عیار، مثقال 17 عیار، سکه کامل و...) نمایش می‌دهد.
+- با انتخاب هر دکمه، قیمت مربوطه را دریافت کرده، به تومان (×1000) تبدیل می‌کند و برای کاربر ارسال می‌کند.
 
+---
 
+## Commands | دستورات
 
+- `/start` → Displays the menu with price options.
+- `[Gold Gram 18K]` → Shows the current sell/buy price of 18K gold per gram.
+- `[Mithqal 17K]` → Shows the current sell/buy price of 17K gold per mithqal.
+- `[Full Coin]` → Shows the current price of a full gold coin.
+- `[Half Coin]` → Shows the current price of a half gold coin.
+- `[Quarter Coin]` → Shows the current price of a quarter gold coin.
 
+- `/start` → نمایش منو با گزینه‌های قیمت‌گذاری
+- `[طلا 18 عیار]` → نمایش قیمت خرید/فروش لحظه‌ای طلا 18 عیار به گرم
+- `[مثقال 17 عیار]` → نمایش قیمت خرید/فروش مثقال 17 عیار
+- `[سکه تمام]` → نمایش قیمت لحظه‌ای سکه تمام
+- `[نیم سکه]` → نمایش قیمت لحظه‌ای نیم سکه
+- `[ربع سکه]` → نمایش قیمت لحظه‌ای ربع سکه
